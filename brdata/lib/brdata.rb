@@ -28,7 +28,6 @@ $VERBOSE = nil
   eval "#{clazz}::ABBR_MONTHNAMES = [nil] + %w(Jan Fev Mar Abr Mai Jun Jul Ago Set Out Nov Dez)"
   eval "#{clazz}::ABBR_DAYNAMES = %w(Dom Seg Ter Qua Qui Sex Sáb)"
 end
-$VERBOSE = old_verbose
 
 feriados, metodos = FeriadoParser.parser(File.dirname(__FILE__) + "/brdata/config")
 
@@ -42,6 +41,7 @@ if File.directory?(holiday_file)
   feriados += f
   metodos += m
 end
+$VERBOSE = old_verbose
 
 Date::FERIADOS.clear
 Date::FERIADOS_METODOS.clear
