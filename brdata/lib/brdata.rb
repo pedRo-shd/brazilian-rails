@@ -33,11 +33,11 @@ feriados, metodos = FeriadoParser.parser(File.dirname(__FILE__) + "/brdata/confi
 
 # Verifica se existe arquivo de feriados na aplicação e carrega-os
 
-holiday_file =
+FERIADOS_PATH =
   defined?(APP_PATH) ? File.expand_path(File.split(APP_PATH)[0] + "/feriados",  __FILE__) : ""
 
-if File.directory?(holiday_file)
-  f, m = FeriadoParser.parser(holiday_file)
+if File.directory?(FERIADOS_PATH)
+  f, m = FeriadoParser.parser(FERIADOS_PATH)
   feriados += f
   metodos += m
 end
